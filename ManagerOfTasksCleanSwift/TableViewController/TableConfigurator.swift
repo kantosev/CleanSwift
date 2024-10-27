@@ -32,4 +32,6 @@ final class TableConfigurator: TableConfiguratorProtocol {
         router.viewController = viewController
     }
     
+
+    
 }

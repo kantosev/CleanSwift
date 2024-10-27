@@ -9,14 +9,14 @@ import Foundation
 
 
 protocol TablePresenterProtocol {
-    func getCountOfTasks(response: TableModel.Response)
+    func getTaskstoVC(response: TableModel.Response)
 }
 
 final class TablePresenter: TablePresenterProtocol {
     
-    var viewController: TableViewControllerInputProtocol?
+    weak var viewController: TableViewControllerInputProtocol?
     
-    func getCountOfTasks(response: TableModel.Response) {
+    func getTaskstoVC(response: TableModel.Response) {
         var tasks: [TaskViewModelProtocol] = []
         response.tasks.forEach { task in
             let taskViewModel = TableModel.ViewModel.TaskViewModel(task: task)
@@ -26,6 +26,5 @@ final class TablePresenter: TablePresenterProtocol {
         let viewModel = TableModel.ViewModel(tasks: tasks)
         viewController?.setCountOfTasks(viewModel: viewModel)
     }
-    
     
 }

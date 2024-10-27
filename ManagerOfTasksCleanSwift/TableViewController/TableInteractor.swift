@@ -8,7 +8,7 @@
 import Foundation
 
 protocol TableInteractorInputProtocol {
-    func getCountOfTasks()
+    func getTasks()
 }
 
 
@@ -19,13 +19,16 @@ final class TableInteractor: TableInteractorInputProtocol {
     var presenter: TablePresenterProtocol?
     
    
-    func getCountOfTasks() {
-        guard let tasks = userDefaults.getCodableObject(dataType: [Task].self, key: "tasks") else {
-            return
-        }
+    func getTasks() {
+//        guard let tasks = userDefaults.getCodableObject(dataType: [Task].self, key: "tasks") else {
+//            return
+//        }
+        
+        let tasks: [Task] = [Task(title: "Первая задача", text: "123213123"), Task(title: "Вторая задача", text: "123213123"), Task(title: "Третья задача", text: "123213123")]
         
         let response = TableModel.Response(tasks: tasks)
-        presenter?.getCountOfTasks(response: response)
+        presenter?.getTaskstoVC(response: response)
     }
+    
     
 }

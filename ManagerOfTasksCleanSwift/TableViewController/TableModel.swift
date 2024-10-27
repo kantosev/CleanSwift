@@ -7,14 +7,16 @@
 
 import Foundation
 
-protocol TaskViewModelProtocol {}
+protocol TaskViewModelProtocol {
+    
+}
 
 
 enum TableModel {
     
-//    struct Request {
-//        
-//    }
+    struct Request {
+        
+    }
     
     struct Response {
         let tasks: [Task]
